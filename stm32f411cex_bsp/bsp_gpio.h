@@ -1,9 +1,9 @@
 #ifndef __BSP_GPIO_H
 #define __BSP_GPIO_H
 
+/******************************** include files ********************************/
 #include "stm32f4xx.h"                  // Device header
 #include "stm32f411xe.h"                  // Device header
-
 /*********************************** CONSTANTS ************************************/
 //These are specific to stm32
 //RM (Section 8.4.1) include in header files so can be used in other type of bsp ie i2c,spi,uart
