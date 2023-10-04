@@ -104,10 +104,12 @@
 #define OLED_CHARGEPUMP_ON      													0x14u
 #define OLED_CHARGEPUMP_OFF     													0x10u
 
+static uint8_t zeros[1025] = {0x40u};
+
 void sdd1306_init(void){
 	//by default the addressing mode is horizontal
 	uint8_t initializeCmds[]={
-				OLED_CONTROL_COMMAND_BYTE,//0x00
+				SDD1306_CONTROL_COMMAND_BYTE,//0x00
         //////// Fundamental Commands
         OLED_DISPLAYOFF,          
         OLED_SETCONTRAST,         
@@ -146,7 +148,7 @@ void sdd1306_init(void){
 		
 	//clear the screen
 		uint8_t temp[]= {
-						OLED_CONTROL_COMMAND_BYTE,
+						SDD1306_CONTROL_COMMAND_BYTE,
             OLED_DISPLAYOFF,
             OLED_SETMEMORYMODE, 
             OLED_SETMEMORYMODE_HORIZONTAL, // Horizontal
@@ -161,19 +163,14 @@ void sdd1306_init(void){
     };
 		bsp_i2c_master_transfer(temp, sizeof(temp), OLED_ADDR);
 		
-		    // Write twelve bytes onto screen with 0b10101010
-		uint8_t dat[1025] = {0x00u};
-		dat[0] = 0x40u;
-		for (int i = 1;i<1025;i++){
-			dat[i] = 0x00u;
-		}
-		bsp_i2c_master_transfer(dat,sizeof(dat),OLED_ADDR);
+		// Write twelve bytes onto screen with 0b10101010
+		bsp_i2c_master_transfer(zeros,sizeof(zeros),OLED_ADDR);
 }
 
-void sdd1306_draw(uint8_t startpage, uint8_t endpage, uint8_t startcolumn, uint8_t endcolumn, uint8_t *data, uint16_t datalen){
+void sdd1306_draw(uint8_t startpage, uint8_t endpage, uint8_t startcolumn, uint8_t endcolumn, const uint8_t *data, uint16_t datalen){
 	//here it is assumed that the addressing mode is horizontal or vertical
 	uint8_t cmd[] = {
-		OLED_CONTROL_COMMAND_BYTE,
+		SDD1306_CONTROL_COMMAND_BYTE,
 		OLED_SETCOLUMNADDR, //must set column first then page only for it to work
 		startcolumn, 
 		endcolumn,
@@ -183,4 +180,9 @@ void sdd1306_draw(uint8_t startpage, uint8_t endpage, uint8_t startcolumn, uint8
 	};
 	bsp_i2c_master_transfer(cmd,sizeof(cmd),OLED_ADDR);
 	bsp_i2c_master_transfer(data,datalen,OLED_ADDR);
+}
+
+void sdd1306_clear_area(uint8_t startpage, uint8_t endpage, uint8_t startcolumn, uint8_t endcolumn){
+	uint16_t s = ((endpage-startpage)+1)*((endcolumn-startcolumn)+1)+1;
+	sdd1306_draw(startpage,endpage,startcolumn,endcolumn,zeros,s);
 }

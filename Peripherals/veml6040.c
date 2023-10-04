@@ -25,7 +25,7 @@
 //									0x03u-320ms
 //									0x04u-640ms
 //									0x05u-1280ms
-#define VEML6040_CONF_INTEGRATION_TIME  0x01u //higher, better sensitity but need to decrease sample rate
+#define VEML6040_CONF_INTEGRATION_TIME  0x02u //higher, better sensitity but need to decrease sample rate
 #define VEML6040_CONF_MODE							0x00u //auto
 #define VEML6040_CONF_ENABLE						0x00u //enable
 #define VEML6040_DUMMY									0x00u //Pass as upper data byte when configuring
@@ -41,7 +41,7 @@ void veml6040_init(void){
 	
 }
 
-void veml6040_get_data_raw(VEML6040RawData_TypeDef *datastruct){
+void veml6040_get_data_raw(volatile VEML6040RawData_TypeDef *datastruct){
 	uint8_t bufR[2] = {0x00u,0x00u};
 	uint8_t bufG[2] = {0x00u,0x00u};
 	uint8_t bufB[2] = {0x00u,0x00u};

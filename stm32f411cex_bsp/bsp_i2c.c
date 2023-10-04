@@ -82,7 +82,7 @@ void bsp_i2c_init(void){
 	SET_BIT(I2C1->CR1,I2C_CR1_ACK);
 }
 
-void bsp_i2c_master_transfer(uint8_t* buf,uint16_t len,uint8_t addr){
+void bsp_i2c_master_transfer(const uint8_t* buf,uint16_t len,uint8_t addr){
 	volatile uint8_t tempreg = 0;
 	//RM (pg 479)
 	//Set I2C_SR1_Start bit
@@ -115,13 +115,12 @@ void bsp_i2c_master_transfer(uint8_t* buf,uint16_t len,uint8_t addr){
 	//Wait until I2C_SR1_TxE = 1 (EV8_1 starts)
 	while(READ_BIT(I2C1->SR1,I2C_SR1_TXE)==0u);
 	
-	//Loop : Write data in current pointer of buf to I2C_DR
+	//Loop : Write byte in buf to I2C_DR
 	//			 Wait until I2C_SR1_TxE=1(because set by hardware when ACK is get) (EV8 starts)
-	//			 Increment buf to move on to next byte
+	//       Move on to next byte by increasing index
 	for (uint16_t i=0;i<len;i++){
-		I2C1->DR=(*buf);
+		I2C1->DR=buf[i];
 		while(READ_BIT(I2C1->SR1,I2C_SR1_TXE)==0u);
-		buf++;
 	}
 	
 	//When loop finishes wait I2C_SR1_TxE & I2C_SR1_BTF = 1 (EV8_2 starts, clock is stretched by master)

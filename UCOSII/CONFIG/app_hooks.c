@@ -244,10 +244,4 @@ void  App_TCBInitHook (OS_TCB *ptcb)
 *********************************************************************************************************
 */
 
-#if OS_TIME_TICK_HOOK_EN > 0
-void  App_TimeTickHook (void)
-{
-
-}
-#endif
 #endif

@@ -8,7 +8,7 @@
 /*******************************************************************************/
 
 void bsp_i2c_init(void);
-void bsp_i2c_master_transfer(uint8_t* buf,uint16_t len,uint8_t addr);
+void bsp_i2c_master_transfer(const uint8_t* buf,uint16_t len,uint8_t addr);
 //for sequence start bit -> address(r) -> ack from slave -> data from slave -> ack from master --> repeat for len-1 --> stop
 void bsp_i2c_master_receive(uint8_t* buf,uint16_t len,uint8_t addr);
 //for sequence start bit -> address(w) -> ack from slave -> reg -> ack from slave --> ...repeat for reglen-1 --> restart -> address(r) -> data from slave -> ack from master --> repeat for len-1 --> stop

@@ -53,7 +53,7 @@ void bsp_gpio_LED_off(void);
 
 void bsp_gpio_user_key_init(void);
 void bsp_gpio_user_key_it_init(void);
-int bsp_gpio_user_key_get_state(void);
+uint8_t bsp_gpio_user_key_get_state(void);
 
 void bsp_gpio_PA7_init(void);
 void bsp_gpio_PA7_set(void);
@@ -62,5 +62,6 @@ void bsp_gpio_PA7_reset(void);
 void bsp_gpio_PA6_init(void);
 void bsp_gpio_PA6_set(void);
 void bsp_gpio_PA6_reset(void);
+uint8_t bsp_gpio_PA6_get_state(void);
 
 #endif

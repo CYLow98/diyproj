@@ -20,5 +20,5 @@ typedef struct{
 }VEML6040LuxData_TypeDef;
 
 void veml6040_init(void);
-void veml6040_get_data_raw(VEML6040RawData_TypeDef *datastruct);
+void veml6040_get_data_raw(volatile VEML6040RawData_TypeDef *datastruct);
 #endif

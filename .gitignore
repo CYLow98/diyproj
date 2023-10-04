@@ -7,3 +7,6 @@ ledTest/
 ucosiiTest/
 a/
 sensorTest/
+fontmaker/
+*.o
+*.d
