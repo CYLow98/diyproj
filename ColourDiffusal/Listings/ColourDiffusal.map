@@ -29,11 +29,11 @@ Section Cross References
     main.o(.text.Task_ColourSampling) refers to os_mutex.o(.text.OSMutexPost) for OSMutexPost
     main.o(.text.Task_ColourSampling) refers to os_time.o(.text.OSTimeDly) for OSTimeDly
     main.o(.ARM.exidx.text.Task_ColourSampling) refers to main.o(.text.Task_ColourSampling) for [Anonymous Symbol]
-    main.o(.text.Task_Veml_LedToggle) refers to bsp_gpio.o(.text.bsp_gpio_PA7_set) for bsp_gpio_PA7_set
+    main.o(.text.Task_Veml_LedToggle) refers to bsp_gpio.o(.text.bsp_gpio_PA7_reset) for bsp_gpio_PA7_reset
     main.o(.text.Task_Veml_LedToggle) refers to main.o(.bss.pa6switchSem) for pa6switchSem
     main.o(.text.Task_Veml_LedToggle) refers to main.o(.bss.err) for err
     main.o(.text.Task_Veml_LedToggle) refers to os_sem.o(.text.OSSemPend) for OSSemPend
-    main.o(.text.Task_Veml_LedToggle) refers to bsp_gpio.o(.text.bsp_gpio_PA7_reset) for bsp_gpio_PA7_reset
+    main.o(.text.Task_Veml_LedToggle) refers to bsp_gpio.o(.text.bsp_gpio_PA7_set) for bsp_gpio_PA7_set
     main.o(.ARM.exidx.text.Task_Veml_LedToggle) refers to main.o(.text.Task_Veml_LedToggle) for [Anonymous Symbol]
     main.o(.text.main) refers to bsp_system.o(.text.bsp_system_init) for bsp_system_init
     main.o(.text.main) refers to bsp_gpio.o(.text.bsp_gpio_user_key_init) for bsp_gpio_user_key_init

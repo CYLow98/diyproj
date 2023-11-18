@@ -439,6 +439,16 @@
               <FileType>5</FileType>
               <FilePath>..\stm32f411cex_bsp\bsp_system.h</FilePath>
             </File>
+            <File>
+              <FileName>bsp_spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\stm32f411cex_bsp\bsp_spi.c</FilePath>
+            </File>
+            <File>
+              <FileName>bsp_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\stm32f411cex_bsp\bsp_spi.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

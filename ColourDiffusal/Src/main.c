@@ -338,8 +338,8 @@ void Task_ColourSampling(void *pdata){
 }
 
 void Task_Veml_LedToggle(void *pdata){
-	uint8_t state = 1; //0 - off, 1 - on
-	bsp_gpio_PA7_set();
+	uint8_t state = 0; //0 - off, 1 - on
+	bsp_gpio_PA7_reset();
 	while(1){
 		OSSemPend(pa6switchSem,0,&err);
 		if(state==1){
