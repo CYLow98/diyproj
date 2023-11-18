@@ -1,4 +1,3 @@
-.o
 blinky/
 helloworld/
 pic/
@@ -8,5 +7,11 @@ ucosiiTest/
 a/
 sensorTest/
 fontmaker/
+SPITest/
+ENC28J60/
+lwip_1_4_1/
+RaspberryPiPico/
+Peripherals/enc28j60.c
+Peripherals/enc28j60.h
 *.o
 *.d
