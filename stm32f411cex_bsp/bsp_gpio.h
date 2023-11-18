@@ -64,4 +64,8 @@ void bsp_gpio_PA6_set(void);
 void bsp_gpio_PA6_reset(void);
 uint8_t bsp_gpio_PA6_get_state(void);
 
+void bsp_gpio_PB0_init(void);
+void bsp_gpio_PB0_set(void);
+void bsp_gpio_PB0_reset(void);
+
 #endif

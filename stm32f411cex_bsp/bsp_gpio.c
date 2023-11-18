@@ -109,3 +109,21 @@ uint8_t bsp_gpio_PA6_get_state(void){
 	return (READ_BIT(GPIOA->IDR,GPIO_IDR_ID6_Msk)>>GPIO_IDR_ID6_Pos);
 }
 /********************************************************************/
+
+/****************************GPIO Generic(PB0)***************************/
+void bsp_gpio_PB0_init(void){
+	SET_BIT(RCC->AHB1ENR,RCC_AHB1ENR_GPIOBEN);
+	MODIFY_REG(GPIOB->MODER,GPIO_MODER_MODE0_Msk,GPIO_MODER_OUTPUT<<GPIO_MODER_MODE0_Pos);
+	MODIFY_REG(GPIOB->OTYPER,GPIO_OTYPER_OT0_Msk,GPIO_OTYPER_PP<<GPIO_OTYPER_OT0_Pos);
+	MODIFY_REG(GPIOB->OSPEEDR,GPIO_OSPEEDR_OSPEED0_Msk,GPIO_OSPEEDR_MS<<GPIO_OSPEEDR_OSPEED0_Pos);
+	MODIFY_REG(GPIOB->PUPDR,GPIO_PUPDR_PUPD0_Msk,GPIO_PUPDR_PD<<GPIO_PUPDR_PUPD0_Pos);
+}
+
+void bsp_gpio_PB0_set(void){
+	SET_BIT(GPIOB->BSRR,GPIO_BSRR_BS0);
+}
+
+void bsp_gpio_PB0_reset(void){
+	SET_BIT(GPIOB->BSRR,GPIO_BSRR_BR0);
+}
+/********************************************************************/
