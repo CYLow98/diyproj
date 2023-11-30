@@ -1,0 +1,1050 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model version="5.3.0" links="1">
+ <documentation>About this example:
+-------------------
+Simple &quot;Blinky&quot; console application for workstations (Windows, Linux, MacOS)
+(see &quot;QM Tutorial&quot; at: https://www.state-machine.com/qm/gs_tut.html)
+
+This example demonstrates:
+- Active object (Blinky) with state machine
+- Board Support Package abstraction for portability
+- BSP implementation for desktop OS (Windows, Linux, MacOS)
+- Platform-independent main() function
+- Makefile to build the generated code on desktop OS (Windows, Linux, MacOS)
+- Customized tools for building the generated code directly from QM
+
+Building the example:
+---------------------
+To build this example, you will need the QP/C framework installed on your computer and the GNU-GCC compiler. Both of them will be available if you install the QP-bundle from:
+
+https://www.state-machine.com/#Downloads
+
+Running the example:
+--------------------
+This example is a simple console application, which you can run from a terminal.
+
+For more QM examples for QP/C see:
+https://www.state-machine.com/qpc/exa.html</documentation>
+ <!--${qpc}-->
+ <framework name="qpc"/>
+ <!--${AOs}-->
+ <package name="AOs" stereotype="0x02">
+  <!--${AOs::Central}-->
+  <class name="Central" superclass="qpc::QActive">
+   <!--${AOs::Central::rgbCount}-->
+   <attribute name="rgbCount" type="VEML6040RawData_TypeDef" visibility="0x02" properties="0x00"/>
+   <!--${AOs::Central::hue}-->
+   <attribute name="hue" type="uint16_t" visibility="0x02" properties="0x00"/>
+   <!--${AOs::Central::ledon}-->
+   <attribute name="ledon" type="bool" visibility="0x02" properties="0x00"/>
+   <!--${AOs::Central::tk}-->
+   <attribute name="tk" type="TickerKeeper" visibility="0x02" properties="0x00"/>
+   <!--${AOs::Central::SM}-->
+   <statechart properties="0x01">
+    <!--${AOs::Central::SM::initial}-->
+    <initial target="../1">
+     <action>//USER CODE
+    TickerKeeper_init(&amp;me-&gt;tk);
+    me-&gt;ledon = false;
+    me-&gt;hue = 0;
+    me-&gt;rgbCount.RCount = 0;
+    me-&gt;rgbCount.GCount = 0;
+    me-&gt;rgbCount.BCount = 0;
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_initial\n&quot;,OSTimeGet());
+#endif
+    if(me-&gt;ledon){
+        //Turn on LED
+        bsp_gpio_PA7_set();
+    }
+    else{
+        //Turn off LED
+        bsp_gpio_PA7_reset();
+    }</action>
+     <initial_glyph conn="53,5,5,0,13,3">
+      <action box="0,-2,10,2"/>
+     </initial_glyph>
+    </initial>
+    <!--${AOs::Central::SM::started}-->
+    <state name="started">
+     <entry>//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_started: Q_ENTRY_SIG\n&quot;,OSTimeGet());
+#endif</entry>
+     <exit>//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_started: Q_EXIT_SIG\n&quot;,OSTimeGet());
+#endif</exit>
+     <!--${AOs::Central::SM::started::initial}-->
+     <initial target="../4">
+      <action>//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_started: Q_INIT_SIG\n&quot;,OSTimeGet());    
+#endif            
+    //Draw area for HUE
+    sdd1306_draw(HUEH_POS_Y,CAL_END_PAGE(HUEH_POS_Y),HUEH_POS_X,CAL_END_COLUMN(HUEH_POS_X),font16x16[13],LED_CHAR_16_SIZE);
+    sdd1306_draw(HUEU_POS_Y,CAL_END_PAGE(HUEU_POS_Y),HUEU_POS_X,CAL_END_COLUMN(HUEU_POS_X),font16x16[16],LED_CHAR_16_SIZE);
+    sdd1306_draw(HUEE_POS_Y,CAL_END_PAGE(HUEE_POS_Y),HUEE_POS_X,CAL_END_COLUMN(HUEE_POS_X),font16x16[12],LED_CHAR_16_SIZE);
+    sdd1306_draw(HUE_COLON_POS_Y,CAL_END_PAGE(HUE_COLON_POS_Y),HUE_COLON_POS_X,CAL_END_COLUMN(HUE_COLON_POS_X),font16x16[10],LED_CHAR_16_SIZE);
+</action>
+      <initial_glyph conn="75,34,5,0,11,5">
+       <action box="0,-2,10,2"/>
+      </initial_glyph>
+     </initial>
+     <!--${AOs::Central::SM::started::LEDTOGGLE}-->
+     <tran trig="LEDTOGGLE">
+      <!--${AOs::Central::SM::started::LEDTOGGLE::[Ledison]}-->
+      <choice>
+       <guard brief="Led is on">me-&gt;ledon</guard>
+       <action>//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_started: LEDTOGGLE_SIG LED off\n&quot;,OSTimeGet());
+#endif
+    //Turn off LED
+    bsp_gpio_PB10_reset();
+    me-&gt;ledon = false;</action>
+       <choice_glyph conn="59,18,5,-1,3,-1,4,1,3">
+        <action box="1,-2,10,2"/>
+       </choice_glyph>
+      </choice>
+      <!--${AOs::Central::SM::started::LEDTOGGLE::[LedisOff]}-->
+      <choice>
+       <guard brief="LedisOff">else</guard>
+       <action>//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_started: LEDTOGGLE_SIG LED on\n&quot;,OSTimeGet());
+#endif
+    //Turn on LED
+    bsp_gpio_PB10_set();
+    me-&gt;ledon = true;</action>
+       <choice_glyph conn="59,18,4,-1,4,10">
+        <action box="1,2,10,2"/>
+       </choice_glyph>
+      </choice>
+      <tran_glyph conn="43,18,3,-1,16">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <!--${AOs::Central::SM::started::SENSOROBTAIN}-->
+     <tran trig="SENSOROBTAIN">
+      <action>//Obtain sensor reading and calculate hue value
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_started: SENSOROBTAIN_SIG\n&quot;,OSTimeGet());
+#endif
+    //Obtain sensor reading and calculate hue value
+    veml6040_get_data_raw(&amp;(me-&gt;rgbCount));
+    me-&gt;hue = calculateHue(me-&gt;rgbCount.RCount,me-&gt;rgbCount.GCount,me-&gt;rgbCount.BCount);</action>
+      <tran_glyph conn="43,26,3,-1,16">
+       <action box="0,-2,18,2"/>
+      </tran_glyph>
+     </tran>
+     <!--${AOs::Central::SM::started::PAUSE}-->
+     <tran trig="PAUSE">
+      <action brief="dispatch to ticker keeper">//Dispatch to ticker keeper
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_started: PAUSE_SIG\n&quot;,OSTimeGet());
+#endif
+TickerKeeper_dispatch(&amp;me-&gt;tk, e);</action>
+      <tran_glyph conn="43,30,3,-1,16">
+       <action box="0,-2,22,5"/>
+      </tran_glyph>
+     </tran>
+     <!--${AOs::Central::SM::started::percentdata}-->
+     <state name="percentdata">
+      <entry>//Write RBG and colon to the right location
+//Post to self with UPDATESCREEN Event
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_percentdata: Q_ENTRY_SIG\n&quot;,OSTimeGet());
+#endif
+    //Write RBG and colon to the right location
+    sdd1306_draw(R_POS_Y_MODE_0,CAL_END_PAGE(R_POS_Y_MODE_0),R_POS_X_MODE_0,CAL_END_COLUMN(R_POS_X_MODE_0),font16x16[15],LED_CHAR_16_SIZE);
+    sdd1306_draw(R_COLON_POS_Y_MODE_0,CAL_END_PAGE(R_COLON_POS_Y_MODE_0),R_COLON_POS_X_MODE_0,CAL_END_COLUMN(R_COLON_POS_X_MODE_0),font16x16[10],LED_CHAR_16_SIZE);
+    sdd1306_draw(G_POS_Y_MODE_0,CAL_END_PAGE(G_POS_Y_MODE_0),G_POS_X_MODE_0,CAL_END_COLUMN(G_POS_X_MODE_0),font16x16[14],LED_CHAR_16_SIZE);
+    sdd1306_draw(G_COLON_POS_Y_MODE_0,CAL_END_PAGE(G_COLON_POS_Y_MODE_0),G_COLON_POS_X_MODE_0,CAL_END_COLUMN(G_COLON_POS_X_MODE_0),font16x16[10],LED_CHAR_16_SIZE);
+    sdd1306_draw(B_POS_Y_MODE_0,CAL_END_PAGE(B_POS_Y_MODE_0),B_POS_X_MODE_0,CAL_END_COLUMN(B_POS_X_MODE_0),font16x16[11],LED_CHAR_16_SIZE);
+    sdd1306_draw(B_COLON_POS_Y_MODE_0,CAL_END_PAGE(B_COLON_POS_Y_MODE_0),B_COLON_POS_X_MODE_0,CAL_END_COLUMN(B_COLON_POS_X_MODE_0),font16x16[10],LED_CHAR_16_SIZE);
+    const QEvt *pe = Q_NEW(QEvt, UPDATESCREEN_SIG);
+    QACTIVE_POST(&amp;me-&gt;super,pe,((void*)0));</entry>
+      <exit>//Clear screen
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_percentdata: Q_EXIT_SIG\n&quot;,OSTimeGet());
+#endif
+    sdd1306_clear_area(MODE_CLEAR_AREA_Y_START,MODE_CLEAR_AREA_Y_END,MODE_CLEAR_AREA_X_START,MODE_CLEAR_AREA_X_END);
+</exit>
+      <!--${AOs::Central::SM::started::percentdata::UPDATESCREEN}-->
+      <tran trig="UPDATESCREEN">
+       <action>//Calculate RGB as percent and display
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_percentdata: UPDATESCREEN_SIG\n&quot;,OSTimeGet());
+#endif
+    //Calculate RGB as percent and display together with HUE
+    uint16_t R = me-&gt;rgbCount.RCount;
+    uint16_t G = me-&gt;rgbCount.GCount;
+    uint16_t B = me-&gt;rgbCount.BCount;
+    uint32_t total = R+B+G;
+    uint8_t percR = (R*100+(total&gt;&gt;1))/total;
+    uint8_t percG = (G*100+(total&gt;&gt;1))/total;
+    uint8_t percB = (B*100+(total&gt;&gt;1))/total;
+    
+    uint8_t digitR0 =  percR % 10;    // Ones place
+    uint8_t digitR1 = (percR / 10) % 10; // Tens place 
+    uint8_t digitR2 = (percR / 100) % 10; // Hundreds place
+    
+    uint8_t digitG0 =  percG % 10;    // Ones place
+    uint8_t digitG1 = (percG / 10) % 10; // Tens place 
+    uint8_t digitG2 = (percG / 100) % 10; // Hundreds place 
+    
+    uint8_t digitB0 =  percB % 10;    // Ones place 
+    uint8_t digitB1 = (percB / 10) % 10; // Tens place 
+    uint8_t digitB2 = (percB / 100) % 10; // Hundreds place 
+    
+    sdd1306_draw(R1_POS_Y_MODE_0,CAL_END_PAGE(R1_POS_Y_MODE_0),R1_POS_X_MODE_0,CAL_END_COLUMN(R1_POS_X_MODE_0),font16x16[digitR0],LED_CHAR_16_SIZE);
+    sdd1306_draw(R2_POS_Y_MODE_0,CAL_END_PAGE(R2_POS_Y_MODE_0),R2_POS_X_MODE_0,CAL_END_COLUMN(R2_POS_X_MODE_0),font16x16[digitR1],LED_CHAR_16_SIZE);
+    sdd1306_draw(R3_POS_Y_MODE_0,CAL_END_PAGE(R3_POS_Y_MODE_0),R3_POS_X_MODE_0,CAL_END_COLUMN(R3_POS_X_MODE_0),font16x16[digitR2],LED_CHAR_16_SIZE);
+    
+    sdd1306_draw(G1_POS_Y_MODE_0,CAL_END_PAGE(G1_POS_Y_MODE_0),G1_POS_X_MODE_0,CAL_END_COLUMN(G1_POS_X_MODE_0),font16x16[digitG0],LED_CHAR_16_SIZE);
+    sdd1306_draw(G2_POS_Y_MODE_0,CAL_END_PAGE(G2_POS_Y_MODE_0),G2_POS_X_MODE_0,CAL_END_COLUMN(G2_POS_X_MODE_0),font16x16[digitG1],LED_CHAR_16_SIZE);
+    sdd1306_draw(G3_POS_Y_MODE_0,CAL_END_PAGE(G3_POS_Y_MODE_0),G3_POS_X_MODE_0,CAL_END_COLUMN(G3_POS_X_MODE_0),font16x16[digitG2],LED_CHAR_16_SIZE);
+
+    sdd1306_draw(B1_POS_Y_MODE_0,CAL_END_PAGE(B1_POS_Y_MODE_0),B1_POS_X_MODE_0,CAL_END_COLUMN(B1_POS_X_MODE_0),font16x16[digitB0],LED_CHAR_16_SIZE);
+    sdd1306_draw(B2_POS_Y_MODE_0,CAL_END_PAGE(B2_POS_Y_MODE_0),B2_POS_X_MODE_0,CAL_END_COLUMN(B2_POS_X_MODE_0),font16x16[digitB1],LED_CHAR_16_SIZE);
+    sdd1306_draw(B3_POS_Y_MODE_0,CAL_END_PAGE(B3_POS_Y_MODE_0),B3_POS_X_MODE_0,CAL_END_COLUMN(B3_POS_X_MODE_0),font16x16[digitB2],LED_CHAR_16_SIZE);
+    
+    sdd1306_draw(HUE1_POS_Y,CAL_END_PAGE(HUE1_POS_Y),HUE1_POS_X,CAL_END_COLUMN(HUE1_POS_X),font16x16[(me-&gt;hue % 10)],LED_CHAR_16_SIZE);
+    sdd1306_draw(HUE2_POS_Y,CAL_END_PAGE(HUE2_POS_Y),HUE2_POS_X,CAL_END_COLUMN(HUE2_POS_X),font16x16[((me-&gt;hue / 10) % 10)],LED_CHAR_16_SIZE);
+    sdd1306_draw(HUE3_POS_Y,CAL_END_PAGE(HUE3_POS_Y),HUE3_POS_X,CAL_END_COLUMN(HUE3_POS_X),font16x16[((me-&gt;hue / 100) % 10)],LED_CHAR_16_SIZE);
+</action>
+       <tran_glyph conn="75,50,3,-1,11">
+        <action box="0,-2,20,2"/>
+       </tran_glyph>
+      </tran>
+      <!--${AOs::Central::SM::started::percentdata::SWITCHMODE}-->
+      <tran trig="SWITCHMODE" target="../../5">
+       <action>//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_percentdata: SWITCHMODE_SIG\n&quot;,OSTimeGet());
+#endif</action>
+       <tran_glyph conn="75,49,3,1,-11">
+        <action box="-10,-2,10,2"/>
+       </tran_glyph>
+      </tran>
+      <state_glyph node="75,39,16,15">
+       <entry box="1,2,6,2"/>
+       <exit box="1,4,6,2"/>
+      </state_glyph>
+     </state>
+     <!--${AOs::Central::SM::started::rawdata}-->
+     <state name="rawdata">
+      <entry>//Write RBG and colon to the right location
+//Post to self with UPDATESCREEN Event
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_rawdata: Q_ENTRY_SIG\n&quot;,OSTimeGet());
+#endif
+    //Write RBG and colon to the right location
+    sdd1306_draw(R_POS_Y_MODE_1,CAL_END_PAGE(R_POS_Y_MODE_1),R_POS_X_MODE_1,CAL_END_COLUMN(R_POS_X_MODE_1),font16x16[15],LED_CHAR_16_SIZE);
+    sdd1306_draw(R_COLON_POS_Y_MODE_1,CAL_END_PAGE(R_COLON_POS_Y_MODE_1),R_COLON_POS_X_MODE_1,CAL_END_COLUMN(R_COLON_POS_X_MODE_1),font16x16[10],LED_CHAR_16_SIZE);
+    sdd1306_draw(G_POS_Y_MODE_1,CAL_END_PAGE(G_POS_Y_MODE_1),G_POS_X_MODE_1,CAL_END_COLUMN(G_POS_X_MODE_1),font16x16[14],LED_CHAR_16_SIZE);
+    sdd1306_draw(G_COLON_POS_Y_MODE_1,CAL_END_PAGE(G_COLON_POS_Y_MODE_1),G_COLON_POS_X_MODE_1,CAL_END_COLUMN(G_COLON_POS_X_MODE_1),font16x16[10],LED_CHAR_16_SIZE);
+    sdd1306_draw(B_POS_Y_MODE_1,CAL_END_PAGE(B_POS_Y_MODE_1),B_POS_X_MODE_1,CAL_END_COLUMN(B_POS_X_MODE_1),font16x16[11],LED_CHAR_16_SIZE);
+    sdd1306_draw(B_COLON_POS_Y_MODE_1,CAL_END_PAGE(B_COLON_POS_Y_MODE_1),B_COLON_POS_X_MODE_1,CAL_END_COLUMN(B_COLON_POS_X_MODE_1),font16x16[10],LED_CHAR_16_SIZE);
+    const QEvt *pe = Q_NEW(QEvt, UPDATESCREEN_SIG);
+    QACTIVE_POST(&amp;me-&gt;super,pe,((void*)0));</entry>
+      <exit>//Clear screen
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_rawdata: Q_EXIT_SIG\n&quot;,OSTimeGet());
+#endif
+sdd1306_clear_area(MODE_CLEAR_AREA_Y_START,MODE_CLEAR_AREA_Y_END,MODE_CLEAR_AREA_X_START,MODE_CLEAR_AREA_X_END);
+</exit>
+      <!--${AOs::Central::SM::started::rawdata::UPDATESCREEN}-->
+      <tran trig="UPDATESCREEN">
+       <action>//Display RGB as raw datas
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_rawdata: UPDATESCREEN_SIG\n&quot;,OSTimeGet());
+#endif
+    //Display RGB as raw datas
+    uint16_t R = me-&gt;rgbCount.RCount;
+    uint16_t G = me-&gt;rgbCount.GCount;
+    uint16_t B = me-&gt;rgbCount.BCount;
+    uint8_t digitR0 =  R % 10;    // Ones placeX
+    uint8_t digitR1 = (R / 10) % 10; // Tens place 
+    uint8_t digitR2 = (R / 100) % 10; // Hundreds place 
+    uint8_t digitR3 = (R / 1000) % 10; // Thousands place 
+    uint8_t digitR4 =  R / 10000; // Ten-Thousand place 
+    
+    uint8_t digitG0 =  G % 10;    // Ones place 
+    uint8_t digitG1 = (G / 10) % 10; // Tens place 
+    uint8_t digitG2 = (G / 100) % 10; // Hundreds place 
+    uint8_t digitG3 = (G / 1000) % 10; // Thousands place 
+    uint8_t digitG4 =  G / 10000; // Ten-Thousand place 
+    
+    uint8_t digitB0 =  B % 10;    // Ones place 
+    uint8_t digitB1 = (B / 10) % 10; // Tens place 
+    uint8_t digitB2 = (B / 100) % 10; // Hundreds place 
+    uint8_t digitB3 = (B / 1000) % 10; // Thousands place 
+    uint8_t digitB4 =  B / 10000; // Ten-Thousand place 
+    
+    sdd1306_draw(R1_POS_Y_MODE_1,CAL_END_PAGE(R1_POS_Y_MODE_1),R1_POS_X_MODE_1,CAL_END_COLUMN(R1_POS_X_MODE_1),font16x16[digitR0],LED_CHAR_16_SIZE);
+    sdd1306_draw(R2_POS_Y_MODE_1,CAL_END_PAGE(R2_POS_Y_MODE_1),R2_POS_X_MODE_1,CAL_END_COLUMN(R2_POS_X_MODE_1),font16x16[digitR1],LED_CHAR_16_SIZE);
+    sdd1306_draw(R3_POS_Y_MODE_1,CAL_END_PAGE(R3_POS_Y_MODE_1),R3_POS_X_MODE_1,CAL_END_COLUMN(R3_POS_X_MODE_1),font16x16[digitR2],LED_CHAR_16_SIZE);
+    sdd1306_draw(R4_POS_Y_MODE_1,CAL_END_PAGE(R4_POS_Y_MODE_1),R4_POS_X_MODE_1,CAL_END_COLUMN(R4_POS_X_MODE_1),font16x16[digitR3],LED_CHAR_16_SIZE);
+    sdd1306_draw(R5_POS_Y_MODE_1,CAL_END_PAGE(R5_POS_Y_MODE_1),R5_POS_X_MODE_1,CAL_END_COLUMN(R5_POS_X_MODE_1),font16x16[digitR4],LED_CHAR_16_SIZE);
+
+    sdd1306_draw(G1_POS_Y_MODE_1,CAL_END_PAGE(G1_POS_Y_MODE_1),G1_POS_X_MODE_1,CAL_END_COLUMN(G1_POS_X_MODE_1),font16x16[digitG0],LED_CHAR_16_SIZE);
+    sdd1306_draw(G2_POS_Y_MODE_1,CAL_END_PAGE(G2_POS_Y_MODE_1),G2_POS_X_MODE_1,CAL_END_COLUMN(G2_POS_X_MODE_1),font16x16[digitG1],LED_CHAR_16_SIZE);
+    sdd1306_draw(G3_POS_Y_MODE_1,CAL_END_PAGE(G3_POS_Y_MODE_1),G3_POS_X_MODE_1,CAL_END_COLUMN(G3_POS_X_MODE_1),font16x16[digitG2],LED_CHAR_16_SIZE);
+    sdd1306_draw(G4_POS_Y_MODE_1,CAL_END_PAGE(G4_POS_Y_MODE_1),G4_POS_X_MODE_1,CAL_END_COLUMN(G4_POS_X_MODE_1),font16x16[digitG3],LED_CHAR_16_SIZE);
+    sdd1306_draw(G5_POS_Y_MODE_1,CAL_END_PAGE(G5_POS_Y_MODE_1),G5_POS_X_MODE_1,CAL_END_COLUMN(G5_POS_X_MODE_1),font16x16[digitG4],LED_CHAR_16_SIZE);
+
+    sdd1306_draw(B1_POS_Y_MODE_1,CAL_END_PAGE(B1_POS_Y_MODE_1),B1_POS_X_MODE_1,CAL_END_COLUMN(B1_POS_X_MODE_1),font16x16[digitB0],LED_CHAR_16_SIZE);
+    sdd1306_draw(B2_POS_Y_MODE_1,CAL_END_PAGE(B2_POS_Y_MODE_1),B2_POS_X_MODE_1,CAL_END_COLUMN(B2_POS_X_MODE_1),font16x16[digitB1],LED_CHAR_16_SIZE);
+    sdd1306_draw(B3_POS_Y_MODE_1,CAL_END_PAGE(B3_POS_Y_MODE_1),B3_POS_X_MODE_1,CAL_END_COLUMN(B3_POS_X_MODE_1),font16x16[digitB2],LED_CHAR_16_SIZE);
+    sdd1306_draw(B4_POS_Y_MODE_1,CAL_END_PAGE(B4_POS_Y_MODE_1),B4_POS_X_MODE_1,CAL_END_COLUMN(B4_POS_X_MODE_1),font16x16[digitB3],LED_CHAR_16_SIZE);
+    sdd1306_draw(B5_POS_Y_MODE_1,CAL_END_PAGE(B5_POS_Y_MODE_1),B5_POS_X_MODE_1,CAL_END_COLUMN(B5_POS_X_MODE_1),font16x16[digitB4],LED_CHAR_16_SIZE);
+    
+    sdd1306_draw(HUE1_POS_Y,CAL_END_PAGE(HUE1_POS_Y),HUE1_POS_X,CAL_END_COLUMN(HUE1_POS_X),font16x16[(me-&gt;hue % 10)],LED_CHAR_16_SIZE);
+    sdd1306_draw(HUE2_POS_Y,CAL_END_PAGE(HUE2_POS_Y),HUE2_POS_X,CAL_END_COLUMN(HUE2_POS_X),font16x16[((me-&gt;hue / 10) % 10)],LED_CHAR_16_SIZE);
+    sdd1306_draw(HUE3_POS_Y,CAL_END_PAGE(HUE3_POS_Y),HUE3_POS_X,CAL_END_COLUMN(HUE3_POS_X),font16x16[((me-&gt;hue / 100) % 10)],LED_CHAR_16_SIZE);
+</action>
+       <tran_glyph conn="47,50,3,-1,9">
+        <action box="0,-2,14,2"/>
+       </tran_glyph>
+      </tran>
+      <!--${AOs::Central::SM::started::rawdata::SWITCHMODE}-->
+      <tran trig="SWITCHMODE" target="../../4">
+       <action>#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, Central_rawdata: SWITCHMODE_SIG\n&quot;,OSTimeGet());
+#endif</action>
+       <tran_glyph conn="64,45,1,3,11">
+        <action box="0,-2,10,2"/>
+       </tran_glyph>
+      </tran>
+      <state_glyph node="47,39,17,15">
+       <entry box="1,2,6,2"/>
+       <exit box="1,4,6,2"/>
+      </state_glyph>
+     </state>
+     <state_glyph node="43,8,51,50">
+      <entry box="1,2,6,2"/>
+      <exit box="1,4,6,2"/>
+     </state_glyph>
+    </state>
+    <state_diagram size="181,94"/>
+   </statechart>
+  </class>
+  <!--${AOs::Central_ctor}-->
+  <operation name="Central_ctor" type="void" visibility="0x00" properties="0x01">
+   <documentation>The Central &quot;constructor&quot; is provided outside of the Blinky class, so that it can be used independently from the class. This is part of the &quot;opaque pointer&quot; design idiom.</documentation>
+   <code>Central *me = (Central *)AO_Central;
+QActive_ctor(&amp;me-&gt;super, Q_STATE_CAST(&amp;Central_initial));
+TickerKeeper_ctor(&amp;me-&gt;tk);</code>
+  </operation>
+  <!--${AOs::TickerKeeper}-->
+  <class name="TickerKeeper" superclass="qpc::QHsm">
+   <!--${AOs::TickerKeeper::sensorDataTimeEvent}-->
+   <attribute name="sensorDataTimeEvent" type="QTimeEvt" visibility="0x02" properties="0x00"/>
+   <!--${AOs::TickerKeeper::ledScreenTimeEvent}-->
+   <attribute name="ledScreenTimeEvent" type="QTimeEvt" visibility="0x02" properties="0x00"/>
+   <!--${AOs::TickerKeeper::screenUpdateRate}-->
+   <attribute name="screenUpdateRate" type="uint16_t" visibility="0x02" properties="0x00"/>
+   <!--${AOs::TickerKeeper::sensorSamplingRate}-->
+   <attribute name="sensorSamplingRate" type="uint16_t" visibility="0x02" properties="0x00"/>
+   <!--${AOs::TickerKeeper::SM}-->
+   <statechart properties="0x00">
+    <!--${AOs::TickerKeeper::SM::initial}-->
+    <initial target="../1">
+     <action>me-&gt;screenUpdateRate = 150u;
+me-&gt;sensorSamplingRate = 100u;</action>
+     <initial_glyph conn="20,6,5,0,6,3">
+      <action box="0,-2,10,2"/>
+     </initial_glyph>
+    </initial>
+    <!--${AOs::TickerKeeper::SM::running}-->
+    <state name="running">
+     <entry>//Arm both time events
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, TickerKeeper_running: Q_ENTRY_SIG\n&quot;,OSTimeGet());
+#endif
+    //Arm both time events
+    QTimeEvt_armX(&amp;me-&gt;ledScreenTimeEvent, me-&gt;screenUpdateRate, me-&gt;screenUpdateRate);
+    QTimeEvt_armX(&amp;me-&gt;sensorDataTimeEvent, me-&gt;sensorSamplingRate, me-&gt;sensorSamplingRate);</entry>
+     <exit>//Disarm both time events
+//USER CODE
+#ifdef DEBUG_CFG
+    printf(&quot;Tick: %i, TickerKeeper_running: Q_EXIT_SIG\n&quot;,OSTimeGet());
+#endif
+    //Disarm both time events
+    (void)QTimeEvt_disarm(&amp;me-&gt;ledScreenTimeEvent);
+    (void)QTimeEvt_disarm(&amp;me-&gt;sensorDataTimeEvent);</exit>
+     <!--${AOs::TickerKeeper::SM::running::PAUSE}-->
+     <tran trig="PAUSE" target="../../2">
+      <tran_glyph conn="25,18,2,0,4">
+       <action box="-5,1,10,2"/>
+      </tran_glyph>
+     </tran>
+     <state_glyph node="21,9,10,9">
+      <entry box="1,2,6,2"/>
+      <exit box="1,4,6,2"/>
+     </state_glyph>
+    </state>
+    <!--${AOs::TickerKeeper::SM::paused}-->
+    <state name="paused">
+     <!--${AOs::TickerKeeper::SM::paused::PAUSE}-->
+     <tran trig="PAUSE" target="../../1">
+      <tran_glyph conn="28,22,0,2,-4">
+       <action box="0,-2,10,2"/>
+      </tran_glyph>
+     </tran>
+     <state_glyph node="21,22,10,10"/>
+    </state>
+    <state_diagram size="80,50"/>
+   </statechart>
+  </class>
+  <!--${AOs::TickerKeeper_ctor}-->
+  <operation name="TickerKeeper_ctor" type="void" visibility="0x00" properties="0x00">
+   <code>TickerKeeper *me = (TickerKeeper *)AO_TickerKeeper;
+Central *Container = (Central*) AO_Central;
+QHsm_ctor(&amp;me-&gt;super, Q_STATE_CAST(&amp;TickerKeeper_initial));
+QTimeEvt_ctorX(&amp;me-&gt;ledScreenTimeEvent, &amp;Container-&gt;super, UPDATESCREEN_SIG, 0U);
+QTimeEvt_ctorX(&amp;me-&gt;sensorDataTimeEvent, &amp;Container-&gt;super, SENSOROBTAIN_SIG, 0U);</code>
+  </operation>
+ </package>
+ <!--${.}-->
+ <directory name=".">
+  <!--${.::central.c}-->
+  <file name="central.c">
+   <text>#include &quot;central.h&quot;
+#include &quot;veml6040.h&quot;
+#include &quot;sdd1306_font.h&quot;
+#include &quot;bsp_gpio.h&quot;
+#include &quot;app.h&quot;
+
+Q_DEFINE_THIS_FILE
+
+/* instantiate the Central active object ------------------------------------*/
+static Central l_central;
+QActive * const AO_Central = &amp;l_central.super;
+
+static uint8_t calculateHue(uint16_t R, uint16_t G, uint16_t B); //internal linkage
+
+/* ask QM to define the Central class ---------------------------------------*/
+$define${AOs::Central_ctor}
+$define${AOs::Central}
+
+static uint8_t calculateHue(uint16_t R, uint16_t G, uint16_t B){
+    //fixed point arithmetic
+    //https://changingminds.org/explanations/perception/visual/hsl.html
+        int32_t RNorm = (R&lt;&lt;12)/65535; //0.12
+    int32_t GNorm = (G&lt;&lt;12)/65535; //0.12
+    int32_t BNorm = (B&lt;&lt;12)/65535; //0.12
+        
+        uint8_t MaxRGB = 0;
+        uint32_t Cmin = RNorm; //0.12
+    uint32_t Cmax = RNorm; //0.12
+        if(GNorm&lt;Cmin){
+            Cmin=GNorm;
+        }else if(GNorm&gt;Cmax){
+            Cmax=GNorm;
+            MaxRGB=1;
+        }
+        
+        if(BNorm&lt;Cmin){
+            Cmin=BNorm;
+        }else if(BNorm&gt;Cmax){
+            Cmax=BNorm;
+            MaxRGB=2;
+        }
+        int32_t delta = Cmax-Cmin; //0.12
+        int32_t hue = 0;
+        if(MaxRGB==0){ //red is max
+                hue = 60*(((((GNorm&lt;&lt;8)-(BNorm&lt;&lt;8))%(6&lt;&lt;20))+(delta&gt;&gt;1))/delta); //intermediate cast to prevent conversion rule messing up the result
+        }else if(MaxRGB==1){ //green is max
+                hue = 60*((2&lt;&lt;8)+(((BNorm&lt;&lt;8)-(RNorm&lt;&lt;8))+(delta&gt;&gt;1))/delta);
+        }else{ //blue is max
+                hue = 60*((4&lt;&lt;8)+(((RNorm&lt;&lt;8)-(GNorm&lt;&lt;8))+(delta&gt;&gt;1))/delta);
+        }
+        //hue is 0.8
+        if(hue&lt;0){
+                hue = hue +(360&lt;&lt;8);
+        }
+        hue = hue &gt;&gt; 8;
+        
+        return hue;
+}
+</text>
+  </file>
+  <!--${.::app.h}-->
+  <file name="app.h">
+   <text>#ifndef APP_H
+#define APP_H
+
+/* a very simple Board Support Package (BSP) -------------------------------*/
+#define BSP_TICKS_PER_SEC    OS_TICKS_PER_SEC /* number of clock ticks in a second */
+
+/* define the event signals used in the application ------------------------*/
+enum CentralSignals {
+    UPDATESCREEN_SIG = Q_USER_SIG, /* offset the first signal by Q_USER_SIG */
+    SENSOROBTAIN_SIG,
+    SWITCHMODE_SIG,
+    LEDTOGGLE_SIG,
+    PAUSE_SIG,
+    MAX_SIG /* keep last (he number of signals) */
+};
+
+//LED POSITIONS SETTING
+//To get column start use (POS_X_MODE)
+//To get column end use (POS_X_MODE)+DISPLAY_CHAR_OFFSET_X-1
+//To get page start use DISPLAY_CHAR_OFFSET_Y*(POS_Y_MODE)
+//To get page start end DISPLAY_CHAR_OFFSET_Y*(POS_Y_MODE)+1
+#define DISPLAY_CHAR_OFFSET_Y       LED_FONT_16_CHAR_HEIGHT
+#define DISPLAY_CHAR_OFFSET_X       LED_FONT_16_CHAR_WIDTH
+
+#define R_POS_Y_MODE_0                  0u    //first page
+#define R_POS_X_MODE_0                  48u   //starts from 47th column
+#define R3_POS_Y_MODE_0                 0u   
+#define R3_POS_X_MODE_0                 80u  
+#define R2_POS_Y_MODE_0                      0u   
+#define R2_POS_X_MODE_0                      96u  
+#define R1_POS_Y_MODE_0                      0u   
+#define R1_POS_X_MODE_0                      112u 
+#define R_COLON_POS_Y_MODE_0                0u
+#define R_COLON_POS_X_MODE_0                 64u
+
+#define G_POS_Y_MODE_0              2u       //third page
+#define G_POS_X_MODE_0              48u      //starts from 47th column
+#define G3_POS_Y_MODE_0             2u   
+#define G3_POS_X_MODE_0             80u  
+#define G2_POS_Y_MODE_0             2u   
+#define G2_POS_X_MODE_0             96u  
+#define G1_POS_Y_MODE_0             2u  
+#define G1_POS_X_MODE_0             112u 
+#define G_COLON_POS_Y_MODE_0        2u
+#define G_COLON_POS_X_MODE_0        64u
+
+#define B_POS_Y_MODE_0              4u       //fifth page
+#define B_POS_X_MODE_0              48u      //starts from 47th column
+#define B3_POS_Y_MODE_0             4u   
+#define B3_POS_X_MODE_0             80u  
+#define B2_POS_Y_MODE_0             4u   
+#define B2_POS_X_MODE_0             96u  
+#define B1_POS_Y_MODE_0             4u   
+#define B1_POS_X_MODE_0             112u 
+#define B_COLON_POS_Y_MODE_0        4u
+#define B_COLON_POS_X_MODE_0        64u
+
+#define R_POS_Y_MODE_1              0u    //first page
+#define R_POS_X_MODE_1              16u   //starts from 47th column
+#define R5_POS_Y_MODE_1             0u   
+#define R5_POS_X_MODE_1             48u  
+#define R4_POS_Y_MODE_1             0u   
+#define R4_POS_X_MODE_1             64u  
+#define R3_POS_Y_MODE_1             0u   
+#define R3_POS_X_MODE_1             80u  
+#define R2_POS_Y_MODE_1             0u   
+#define R2_POS_X_MODE_1             96u  
+#define R1_POS_Y_MODE_1             0u   
+#define R1_POS_X_MODE_1             112u 
+#define R_COLON_POS_Y_MODE_1        0u
+#define R_COLON_POS_X_MODE_1        32u
+
+#define G_POS_Y_MODE_1              2u       //third page
+#define G_POS_X_MODE_1              16u      //starts from 47th column
+#define G5_POS_Y_MODE_1             2u   
+#define G5_POS_X_MODE_1             48u  
+#define G4_POS_Y_MODE_1             2u   
+#define G4_POS_X_MODE_1             64u  
+#define G3_POS_Y_MODE_1             2u   
+#define G3_POS_X_MODE_1             80u  
+#define G2_POS_Y_MODE_1             2u   
+#define G2_POS_X_MODE_1             96u  
+#define G1_POS_Y_MODE_1             2u  
+#define G1_POS_X_MODE_1             112u 
+#define G_COLON_POS_Y_MODE_1        2u
+#define G_COLON_POS_X_MODE_1        32u
+
+#define B_POS_Y_MODE_1       4u       //fifth page
+#define B_POS_X_MODE_1       16u      //starts from 47th column 
+#define B5_POS_Y_MODE_1      4u   
+#define B5_POS_X_MODE_1      48u  
+#define B4_POS_Y_MODE_1      4u   
+#define B4_POS_X_MODE_1      64u 
+#define B3_POS_Y_MODE_1      4u   
+#define B3_POS_X_MODE_1      80u  
+#define B2_POS_Y_MODE_1      4u   
+#define B2_POS_X_MODE_1      96u  
+#define B1_POS_Y_MODE_1      4u   
+#define B1_POS_X_MODE_1      112u 
+#define B_COLON_POS_Y_MODE_1 4u
+#define B_COLON_POS_X_MODE_1 32u
+
+#define HUEH_POS_Y               6u       //seventh page
+#define HUEH_POS_X           16u      //starts from 47th column
+#define HUEU_POS_Y           6u       
+#define HUEU_POS_X           32u      
+#define HUEE_POS_Y           6u   
+#define HUEE_POS_X           48u  
+#define HUE3_POS_Y           6u   
+#define HUE3_POS_X           80u  
+#define HUE2_POS_Y           6u   
+#define HUE2_POS_X           96u  
+#define HUE1_POS_Y           6u   
+#define HUE1_POS_X           112u 
+
+#define HUE_COLON_POS_Y      6u   
+#define HUE_COLON_POS_X      64u 
+
+#define MODE_CLEAR_AREA_X_START 0u
+#define MODE_CLEAR_AREA_X_END   127u
+#define MODE_CLEAR_AREA_Y_START 0u
+#define MODE_CLEAR_AREA_Y_END   5u
+
+#define CAL_END_COLUMN(STARTCOL) STARTCOL+DISPLAY_CHAR_OFFSET_X-1
+
+#define CAL_END_PAGE(STARTPAGE) (STARTPAGE*DISPLAY_CHAR_OFFSET_Y)+1
+
+#endif /* APP_H */</text>
+  </file>
+  <!--${.::app.c}-->
+  <file name="app.c">
+   <text>/* Board Support Package implementation for desktop OS (Windows, Linux, MacOS) */
+#include &quot;qpc.h&quot;    /* QP/C framework API */
+#ifdef DEBUG_CFG
+#include &lt;stdio.h&gt;  /* for printf()/fprintf() */
+#endif
+#include &lt;stdlib.h&gt; /* for exit() *//* callback functions needed by the framework ------------------------------*/
+
+void QF_onStartup(void) {}
+void QF_onCleanup(void) {}
+void QF_onClockTick(void) {
+    QF_TICK_X(0U, (void *)0); /* QF clock tick processing for rate 0 */
+}
+void Q_onAssert(char const * const module, int loc) {
+#ifdef DEBUG_CFG
+    fprintf(stderr, &quot;Assertion failed in %s:%d&quot;, module, loc);
+#endif
+    exit(-1);
+}</text>
+  </file>
+  <!--${.::main.c}-->
+  <file name="main.c">
+   <text>#include &quot;qpc.h&quot;    /* QP/C framework API */
+#include &quot;app.h&quot;    /* Board Support Package interface */
+#include &quot;central.h&quot;
+#include &quot;bsp_system.h&quot;
+#include &quot;bsp_gpio.h&quot;
+#include &quot;bsp_i2c.h&quot;
+#ifdef DEBUG_CFG
+#include &lt;stdio.h&gt;
+#endif
+#include &lt;stdbool.h&gt;
+#include &quot;includes.h&quot;
+#include &quot;sdd1306.h&quot;
+#include &quot;veml6040.h&quot;
+#include &quot;sdd1306_font.h&quot;
+/*---------------------------------------------------------------------------*/
+
+Q_DEFINE_THIS_FILE
+
+/* the main function -------------------------------------------------------*/
+int main() {
+
+    /* initialize the framework */
+    QF_init(); //Same as OSInit();
+
+    static QEvt const *central_queueSto[100]; /* event queue buffer for Central */
+    static OS_STK centralStack[512];
+
+    static QF_MPOOL_EL(QEvt) smlPoolSto[25];
+        QF_poolInit(smlPoolSto, sizeof(smlPoolSto), sizeof(smlPoolSto[0]));
+
+    /* initialize the BSP and Peripherals */
+    bsp_system_init();
+    bsp_gpio_user_key_init();
+    bsp_gpio_PB0_init();
+    bsp_gpio_PB1_init();
+    bsp_gpio_PB10_init();
+    bsp_i2c_init();
+    veml6040_init();
+    sdd1306_init();
+
+    /* instantiate and start the Blinky active object */
+    Central_ctor(); /* in C you must explicitly call the Central constructor */
+    QACTIVE_START(AO_Central, /* active object to start */
+            1U,                  /* priority of the active object */
+            central_queueSto,     /* event queue buffer */
+            Q_DIM(central_queueSto), /* the length of the buffer */
+            centralStack, sizeof(centralStack),       /* task stack */
+            (void *)0);          /* initialization event (not used) */
+#ifdef DEBUG_CFG
+    printf(&quot;main: started\n&quot;);
+#endif
+    return QF_run(); //Same as OSStart() /* let the framework run the application */
+
+}
+
+bool DebounceSwitch()
+{
+    static uint16_t State = 0; // Current debounce status
+    State=(State&lt;&lt;1) | !bsp_gpio_user_key_get_state() | 0xe000;
+    if(State==0xf000)return true;
+    return false;
+}
+
+bool DebounceSwitch2(){
+    static uint16_t State = 0; // Current debounce status
+    State=(State&lt;&lt;1) | !bsp_gpio_PB1_get_state() | 0xe000;
+    if(State==0xf000)return true;
+    return false;
+}
+
+bool DebounceSwitch3(){
+    static uint16_t State = 0; // Current debounce status
+    State=(State&lt;&lt;1) | !bsp_gpio_PB0_get_state() | 0xe000;
+    if(State==0xf000)return true;
+    return false;
+}
+
+#if OS_TIME_TICK_HOOK_EN &gt; 0
+void  App_TimeTickHook (void)
+{
+    QTIMEEVT_TICK_X(0U, &amp;l_tickHook); // time events at rate 0
+    if(DebounceSwitch()){
+        //ChangeMode = true;
+        const QEvt *pe = Q_NEW(QEvt, SWITCHMODE_SIG);
+        QACTIVE_POST(AO_Central,pe,((void*)0));
+    }
+    if(DebounceSwitch2()){
+        //OSSemPost(pa6switchSem);
+        const QEvt *pe = Q_NEW(QEvt, LEDTOGGLE_SIG);
+        QACTIVE_POST(AO_Central,pe,((void*)0));
+    }
+    if(DebounceSwitch3()){
+        //OSSemPost(pa6switchSem);
+        const QEvt *pe = Q_NEW(QEvt, PAUSE_SIG);
+        QACTIVE_POST(AO_Central,pe,((void*)0));
+    }
+}
+#endif</text>
+  </file>
+  <!--${.::Makefile}-->
+  <file name="Makefile">
+   <text># Makefile for building QP/C application on Windows and POSIX hosts
+#
+# examples of invoking this Makefile:
+# building configurations: Debug (default), Release, and Spy
+# make
+# make CONF=rel
+# make CONF=spy
+# make clean   # cleanup the build
+# make CONF=spy clean   # cleanup the build
+#
+# NOTE:
+# To use this Makefile on Windows, you will need the GNU make utility, which
+# is included in the QTools collection for Windows, see:
+#    http://sourceforge.net/projects/qpc/files/QTools/
+#
+
+#-----------------------------------------------------------------------------
+# project name:
+#
+PROJECT := blinky
+
+#-----------------------------------------------------------------------------
+# project directories:
+#
+
+# list of all source directories used by this project
+VPATH := . \
+
+# list of all include directories needed by this project
+INCLUDES := -I. \
+
+# location of the QP/C framework (if not provided in an env. variable)
+ifeq ($(QPC),)
+QPC := /qp/qpc
+endif
+
+#-----------------------------------------------------------------------------
+# project files:
+#
+
+# C source files...
+C_SRCS := \
+    blinky.c \
+    bsp.c \
+    main.c
+
+# C++ source files...
+CPP_SRCS :=
+
+LIB_DIRS :=
+LIBS     :=
+
+# defines...
+# QP_API_VERSION controls the QP API compatibility; 9999 means the latest API
+DEFINES   := -DQP_API_VERSION=9999
+
+ifeq (,$(CONF))
+    CONF := dbg
+endif
+
+#-----------------------------------------------------------------------------
+# add QP/C framework:
+#
+C_SRCS += \
+    qep_hsm.c \
+    qep_msm.c \
+    qf_act.c \
+    qf_actq.c \
+    qf_defer.c \
+    qf_dyn.c \
+    qf_mem.c \
+    qf_ps.c \
+    qf_qact.c \
+    qf_qeq.c \
+    qf_qmact.c \
+    qf_time.c \
+    qf_port.c
+
+QS_SRCS := \
+    qs.c \
+    qs_64bit.c \
+    qs_rx.c \
+    qs_fp.c \
+    qs_port.c
+
+ifeq ($(OS),Windows_NT)
+
+# NOTE:
+# For Windows hosts, you can choose:
+# - the single-threaded QP/C port (win32-qv) or
+# - the multithreaded QP/C port (win32).
+#
+QP_PORT_DIR := $(QPC)/ports/win32-qv
+#QP_PORT_DIR := $(QPC)/ports/win32
+LIBS += -lws2_32
+
+else
+
+# NOTE:
+# For POSIX hosts (Linux, MacOS), you can choose:
+# - the single-threaded QP/C port (win32-qv) or
+# - the multithreaded QP/C port (win32).
+#
+QP_PORT_DIR := $(QPC)/ports/posix-qv
+#QP_PORT_DIR := $(QPC)/ports/posix
+LIBS += -lpthread
+
+endif
+
+#============================================================================
+# Typically you should not need to change anything below this line
+
+VPATH    += $(QPC)/src/qf $(QP_PORT_DIR)
+INCLUDES += -I$(QPC)/include -I$(QP_PORT_DIR)
+
+#-----------------------------------------------------------------------------
+# GNU toolset:
+#
+# NOTE:
+# GNU toolset (MinGW) is included in the QTools collection for Windows, see:
+#     https://www.state-machine.com/qtools
+# It is assumed that %QTOOLS%\bin directory is added to the PATH
+#
+CC    := gcc
+CPP   := g++
+LINK  := gcc    # for C programs
+#LINK  := g++   # for C++ programs
+
+#-----------------------------------------------------------------------------
+# basic utilities (depends on the OS this Makefile runs on):
+#
+ifeq ($(OS),Windows_NT)
+    MKDIR      := mkdir
+    RM         := rm
+    TARGET_EXT := .exe
+else ifeq ($(OSTYPE),cygwin)
+    MKDIR      := mkdir -p
+    RM         := rm -f
+    TARGET_EXT := .exe
+else
+    MKDIR      := mkdir -p
+    RM         := rm -f
+    TARGET_EXT :=
+endif
+
+#-----------------------------------------------------------------------------
+# build configurations...
+
+ifeq (rel, $(CONF)) # Release configuration ..................................
+
+BIN_DIR := build_rel
+# gcc options:
+CFLAGS  = -c -O3 -fno-pie -std=c11 -pedantic -Wall -Wextra -W \
+    $(INCLUDES) $(DEFINES) -DNDEBUG
+
+CPPFLAGS = -c -O3 -fno-pie -std=c++11 -pedantic -Wall -Wextra \
+    -fno-rtti -fno-exceptions \
+    $(INCLUDES) $(DEFINES) -DNDEBUG
+
+else ifeq (spy, $(CONF))  # Spy configuration ................................
+
+BIN_DIR := build_spy
+
+C_SRCS   += $(QS_SRCS)
+VPATH    += $(QPC)/src/qs
+
+# gcc options:
+CFLAGS  = -c -g -O -fno-pie -std=c11 -pedantic -Wall -Wextra -W \
+    $(INCLUDES) $(DEFINES) -DQ_SPY
+
+CPPFLAGS = -c -g -O -fno-pie -std=c++11 -pedantic -Wall -Wextra \
+    -fno-rtti -fno-exceptions \
+    $(INCLUDES) $(DEFINES) -DQ_SPY
+
+else # default Debug configuration .........................................
+
+BIN_DIR := build
+
+# gcc options:
+CFLAGS  = -c -g -O -fno-pie -std=c11 -pedantic -Wall -Wextra -W \
+    $(INCLUDES) $(DEFINES)
+
+CPPFLAGS = -c -g -O -fno-pie -std=c++11 -pedantic -Wall -Wextra \
+    -fno-rtti -fno-exceptions \
+    $(INCLUDES) $(DEFINES)
+
+endif  # .....................................................................
+
+ifndef GCC_OLD
+    LINKFLAGS := -no-pie
+endif
+
+#-----------------------------------------------------------------------------
+C_OBJS       := $(patsubst %.c,%.o,   $(C_SRCS))
+CPP_OBJS     := $(patsubst %.cpp,%.o, $(CPP_SRCS))
+
+TARGET_EXE   := $(BIN_DIR)/$(PROJECT)$(TARGET_EXT)
+C_OBJS_EXT   := $(addprefix $(BIN_DIR)/, $(C_OBJS))
+C_DEPS_EXT   := $(patsubst %.o,%.d, $(C_OBJS_EXT))
+CPP_OBJS_EXT := $(addprefix $(BIN_DIR)/, $(CPP_OBJS))
+CPP_DEPS_EXT := $(patsubst %.o,%.d, $(CPP_OBJS_EXT))
+
+#-----------------------------------------------------------------------------
+# rules
+#
+
+.PHONY: clean show
+
+all: $(TARGET_EXE)
+
+$(TARGET_EXE) : $(C_OBJS_EXT) $(CPP_OBJS_EXT)
+    $(CC) $(CFLAGS) $(QPC)/src/qs/qstamp.c -o $(BIN_DIR)/qstamp.o
+    $(LINK) $(LINKFLAGS) $(LIB_DIRS) -o $@ $^ $(BIN_DIR)/qstamp.o $(LIBS)
+
+$(BIN_DIR)/%.d : %.c
+    $(CC) -MM -MT $(@:.d=.o) $(CFLAGS) $&lt; &gt; $@
+
+$(BIN_DIR)/%.d : %.cpp
+    $(CPP) -MM -MT $(@:.d=.o) $(CPPFLAGS) $&lt; &gt; $@
+
+$(BIN_DIR)/%.o : %.c
+    $(CC) $(CFLAGS) $&lt; -o $@
+
+$(BIN_DIR)/%.o : %.cpp
+    $(CPP) $(CPPFLAGS) $&lt; -o $@
+
+# create BIN_DIR and include dependencies only if needed
+ifneq ($(MAKECMDGOALS),clean)
+ifneq ($(MAKECMDGOALS),show)
+ifneq ($(MAKECMDGOALS),debug)
+ifeq (&quot;$(wildcard $(BIN_DIR))&quot;,&quot;&quot;)
+$(shell $(MKDIR) $(BIN_DIR))
+endif
+-include $(C_DEPS_EXT) $(CPP_DEPS_EXT)
+endif
+endif
+endif
+
+clean :
+    -$(RM) $(BIN_DIR)/*.o \
+    $(BIN_DIR)/*.d \
+    $(TARGET_EXE)
+
+show :
+    @echo PROJECT      = $(PROJECT)
+    @echo TARGET_EXE   = $(TARGET_EXE)
+    @echo VPATH        = $(VPATH)
+    @echo C_SRCS       = $(C_SRCS)
+    @echo CPP_SRCS     = $(CPP_SRCS)
+    @echo C_DEPS_EXT   = $(C_DEPS_EXT)
+    @echo C_OBJS_EXT   = $(C_OBJS_EXT)
+    @echo C_DEPS_EXT   = $(C_DEPS_EXT)
+    @echo CPP_DEPS_EXT = $(CPP_DEPS_EXT)
+    @echo CPP_OBJS_EXT = $(CPP_OBJS_EXT)
+    @echo LIB_DIRS     = $(LIB_DIRS)
+    @echo LIBS         = $(LIBS)
+    @echo DEFINES      = $(DEFINES)
+</text>
+  </file>
+  <!--${.::tickerkeeper.c}-->
+  <file name="tickerkeeper.c">
+   <text>#include &quot;central.h&quot;
+#include &quot;tickerkeeper.h&quot;
+#include &quot;app.h&quot;
+
+/* ask QM to define the TickerKeeper class ---------------------------------------*/
+$define${AOs::TickerKeeper}
+
+/*$define${AO::TickerKeeper_ctor}*/
+void TickerKeeper_ctor(TickerKeeper *me){
+    Central *Container = (Central*) AO_Central;
+    QHsm_ctor(&amp;me-&gt;super, Q_STATE_CAST(&amp;TickerKeeper_initial));
+    QTimeEvt_ctorX(&amp;me-&gt;ledScreenTimeEvent, &amp;Container-&gt;super, UPDATESCREEN_SIG, 0U);
+    QTimeEvt_ctorX(&amp;me-&gt;sensorDataTimeEvent, &amp;Container-&gt;super, SENSOROBTAIN_SIG, 0U);
+}</text>
+  </file>
+  <!--${.::tickerkeeper.h}-->
+  <file name="tickerkeeper.h">
+   <text>#ifndef TICKERKEEPER_H
+#define TICKERKEEPER_H
+
+#include &quot;qpc.h&quot;    /* QP/C framework API */
+
+/* ask QM to declare the TickerKeeper class --------------------------------------*/
+$declare${AOs::TickerKeeper}
+
+void TickerKeeper_ctor(TickerKeeper *me);
+
+#define TickerKeeper_init(me_) QHSM_INIT((me_), (QEvt *)0, 0)
+#define TickerKeeper_dispatch(me_, e_) QHSM_DISPATCH((me_), (e_), 0)
+
+#endif /* TICKERKEEPER_H */</text>
+  </file>
+  <!--${.::central.h}-->
+  <file name="central.h">
+   <text>#ifndef CENTRAL_H
+#define CENTRAL_H
+
+#include &quot;qpc.h&quot;    /* QP/C framework API */
+#include &quot;veml6040.h&quot;
+#include &quot;tickerkeeper.h&quot;
+
+/* ask QM to declare the Central class --------------------------------------*/
+$declare${AOs::Central}
+
+extern QActive * const AO_Central; /* opaque pointer to the Blinky AO */
+$declare${AOs::Central_ctor}
+
+#endif /* CENTRAL_H */</text>
+  </file>
+ </directory>
+</model>

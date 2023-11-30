@@ -1,0 +1,742 @@
+Dependencies for Project 'ColourDiffusalED', Target 'Target 1': (DO NOT MODIFY !)
+CompilerVersion: 6190000::V6.19::ARMCLANG
+F (.\Inc\main.h)(0x6563A328)()
+F (.\Inc\stm32f4xx_it.h)(0x655869CA)()
+F (.\Src\main.c)(0x6568E034)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/main.o -MD)
+I (..\qpc\include\qpc.h)(0x65000F84)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+I (Src\app.h)(0x6567C8DE)
+I (Src\central.h)(0x6567C88D)
+I (..\Peripherals\veml6040.h)(0x6524EB1A)
+I (..\stm32f411cex_bsp\bsp_i2c.h)(0x6524EB6B)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+I (Src\tickerkeeper.h)(0x6567C99C)
+I (..\stm32f411cex_bsp\bsp_system.h)(0x6524EB6C)
+I (..\UCOSII\CORE\includes.h)(0x655869CA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\ctype.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63884908)
+I (..\Peripherals\sdd1306.h)(0x6524EB1A)
+I (..\Peripherals\sdd1306_font.h)(0x6524EB1A)
+F (.\Src\stm32f4xx_it.c)(0x655869CA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/stm32f4xx_it.o -MD)
+I (Inc\main.h)(0x6563A328)
+I (Inc\stm32f4xx_it.h)(0x655869CA)
+F (.\Src\app.c)(0x6568C0C6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/app.o -MD)
+I (..\qpc\include\qpc.h)(0x65000F84)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63884908)
+F (.\Src\app.h)(0x6567C8DE)()
+F (.\Src\central.c)(0x6568DFD6)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/central.o -MD)
+I (Src\central.h)(0x6567C88D)
+I (..\qpc\include\qpc.h)(0x65000F84)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+I (..\Peripherals\veml6040.h)(0x6524EB1A)
+I (..\stm32f411cex_bsp\bsp_i2c.h)(0x6524EB6B)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+I (Src\tickerkeeper.h)(0x6567C99C)
+I (..\Peripherals\sdd1306_font.h)(0x6524EB1A)
+I (..\Peripherals\sdd1306.h)(0x6524EB1A)
+I (Src\app.h)(0x6567C8DE)
+F (.\Src\central.h)(0x6567C88D)()
+F (.\Src\tickerkeeper.c)(0x6568DA28)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/tickerkeeper.o -MD)
+I (Src\central.h)(0x6567C88D)
+I (..\qpc\include\qpc.h)(0x65000F84)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+I (..\Peripherals\veml6040.h)(0x6524EB1A)
+I (..\stm32f411cex_bsp\bsp_i2c.h)(0x6524EB6B)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+I (Src\tickerkeeper.h)(0x6567C99C)
+I (Src\app.h)(0x6567C8DE)
+F (.\Src\tickerkeeper.h)(0x6567C99C)()
+F (..\stm32f411cex_bsp\bsp_gpio.c)(0x65650A02)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/bsp_gpio.o -MD)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+F (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)()
+F (..\stm32f411cex_bsp\bsp_i2c.c)(0x6568D1C5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/bsp_i2c.o -MD)
+I (..\stm32f411cex_bsp\bsp_i2c.h)(0x6524EB6B)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+F (..\stm32f411cex_bsp\bsp_i2c.h)(0x6524EB6B)()
+F (..\stm32f411cex_bsp\bsp_system.c)(0x6524EB6B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/bsp_system.o -MD)
+I (..\stm32f411cex_bsp\bsp_system.h)(0x6524EB6C)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+F (..\stm32f411cex_bsp\bsp_system.h)(0x6524EB6C)()
+F (..\stm32f411cex_bsp\bsp_spi.c)(0x6563A334)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/bsp_spi.o -MD)
+I (..\stm32f411cex_bsp\bsp_spi.h)(0x65570391)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63884908)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+F (..\stm32f411cex_bsp\bsp_spi.h)(0x65570391)()
+F (..\UCOSII\CORE\includes.h)(0x655869CA)()
+F (..\UCOSII\CORE\os.h)(0x6524EBDA)()
+F (..\UCOSII\CORE\os_core.c)(0x6524EBDA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_core.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_flag.c)(0x6524EBDA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_flag.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_mbox.c)(0x6524EBDB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_mbox.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_mem.c)(0x6524EBDB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_mem.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_mutex.c)(0x6524EBDB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_mutex.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_q.c)(0x6524EBDB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_q.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_sem.c)(0x6524EBDB)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_sem.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_task.c)(0x6524EBDC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_task.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_time.c)(0x6524EBDC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_time.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_tmr.c)(0x6524EBDC)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_tmr.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)()
+F (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)()
+F (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)()
+F (..\UCOSII\CONFIG\app_hooks.c)(0x6524EBD9)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/app_hooks.o -MD)
+I (..\UCOSII\CORE\os.h)(0x6524EBDA)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)()
+F (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)()
+F (..\UCOSII\PORT\os_cpu_a.asm)(0x6524EBDD)(--cpu Cortex-M4 --fpu=SoftVFP -g --diag_suppress=A1950W-I.\RTE\_Target_1-IC:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 538"--pd "_RTE_ SETA 1"--pd "STM32F411xE SETA 1"--pd "_RTE_ SETA 1"--list .\listings\os_cpu_a.lst--xref -o .\objects\os_cpu_a.o--depend .\objects\os_cpu_a.d)
+F (..\UCOSII\PORT\os_cpu_c.c)(0x6524EBDD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/os_cpu_c.o -MD)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+F (..\Peripherals\sdd1306.c)(0x6524EB1A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/sdd1306.o -MD)
+I (..\Peripherals\sdd1306.h)(0x6524EB1A)
+I (..\stm32f411cex_bsp\bsp_i2c.h)(0x6524EB6B)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+F (..\Peripherals\sdd1306.h)(0x6524EB1A)()
+F (..\Peripherals\veml6040.c)(0x6524EB1A)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/veml6040.o -MD)
+I (..\Peripherals\veml6040.h)(0x6524EB1A)
+I (..\stm32f411cex_bsp\bsp_i2c.h)(0x6524EB6B)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\stm32f411cex_bsp\bsp_gpio.h)(0x656660C5)
+F (..\Peripherals\veml6040.h)(0x6524EB1A)()
+F (..\Peripherals\sdd1306_font.h)(0x6524EB1A)()
+F (..\qpc\src\qf\qep_hsm.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qep_hsm.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qep_msm.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qep_msm.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_act.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_act.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_defer.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_defer.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_dyn.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_dyn.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_mem.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_mem.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_ps.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_ps.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_qact.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_qact.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_qeq.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_qeq.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_qmact.c)(0x65000F84)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_qmact.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\src\qf\qf_time.c)(0x6513BCBE)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_time.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\kernels\ucosii\qf_port.c)(0x65636527)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/qf_port.o -MD)
+I (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdbool.h)(0x63884908)
+I (..\UCOSII\CORE\ucos_ii.h)(0x6524EBDC)
+I (..\UCOSII\CONFIG\app_cfg.h)(0x6524EBD9)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdarg.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
+I (..\UCOSII\CONFIG\os_cfg.h)(0x65639FEF)
+I (..\UCOSII\PORT\os_cpu.h)(0x6524EBDD)
+I (..\UCOSII\CORE\os_trace.h)(0x6524EBDC)
+I (..\qpc\include\qequeue.h)(0x65000F84)
+I (..\qpc\include\qmpool.h)(0x65000F84)
+I (..\qpc\include\qp.h)(0x6513BCBE)
+I (..\qpc\include\qp_pkg.h)(0x65000F84)
+I (..\qpc\include\qsafe.h)(0x65000F84)
+I (..\qpc\include\qs_dummy.h)(0x65000F84)
+F (..\qpc\kernels\ucosii\qp_port.h)(0x65000F84)()
+F (..\qpc\kernels\ucosii\qs_port.h)(0x65000F84)()
+F (..\qpc\include\qequeue.h)(0x65000F84)()
+F (..\qpc\include\qk.h)(0x65000F84)()
+F (..\qpc\include\qmpool.h)(0x65000F84)()
+F (..\qpc\include\qp.h)(0x6513BCBE)()
+F (..\qpc\include\qp_pkg.h)(0x65000F84)()
+F (..\qpc\include\qpc.h)(0x65000F84)()
+F (..\qpc\include\qs.h)(0x65000F84)()
+F (..\qpc\include\qs_dummy.h)(0x65000F84)()
+F (..\qpc\include\qs_pkg.h)(0x65000F84)()
+F (..\qpc\include\qsafe.h)(0x65000F84)()
+F (..\qpc\include\qstamp.h)(0x65000F84)()
+F (..\qpc\include\qv.h)(0x65000F84)()
+F (..\qpc\include\qxk.h)(0x65000F84)()
+F (C:/Users/ney/AppData/Local/Arm/Packs/Keil/ARM_Compiler/1.7.2/Source/retarget_io.c)(0x6563A3B5)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/retarget_io.o -MD)
+I (C:\Keil_v5\ARM\ARMCLANG\include\string.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdio.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdlib.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\assert.h)(0x63884908)
+I (C:\Keil_v5\ARM\ARMCLANG\include\rt_sys.h)(0x63884908)
+I (RTE\_Target_1\RTE_Components.h)(0x6562D513)
+F (RTE/Device/STM32F411CEUx/startup_stm32f411xe.s)(0x655869CA)(--cpu Cortex-M4 --fpu=SoftVFP -g --diag_suppress=A1950W-I.\RTE\_Target_1-IC:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include-IC:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include--pd "__UVISION_VERSION SETA 538"--pd "_RTE_ SETA 1"--pd "STM32F411xE SETA 1"--pd "_RTE_ SETA 1"--list .\listings\startup_stm32f411xe.lst--xref -o .\objects\startup_stm32f411xe.o--depend .\objects\startup_stm32f411xe.d)
+F (RTE/Device/STM32F411CEUx/system_stm32f4xx.c)(0x655869CA)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m4 -mfpu=none -mfloat-abi=soft -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wno-packed -Wno-missing-variable-declarations -Wno-missing-prototypes -Wno-missing-noreturn -Wno-sign-conversion -Wno-nonportable-include-path -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ./Inc -I ../stm32f411cex_bsp -I ../UCOSII/CONFIG -I ../UCOSII/CORE -I ../UCOSII/PORT -I ../Peripherals -I ../qpc/include -I ../qpc/kernels/ucosii-I./RTE/_Target_1-IC:/Users/ney/AppData/Local/Arm/Packs/ARM/CMSIS/5.9.0/CMSIS/Core/Include-IC:/Users/ney/AppData/Local/Arm/Packs/Keil/STM32F4xx_DFP/2.17.1/Drivers/CMSIS/Device/ST/STM32F4xx/Include-D__UVISION_VERSION="538" -D_RTE_ -DSTM32F411xE -D_RTE_ -D__TARGET_FPU_SOFTVFP-o ./objects/system_stm32f4xx.o -MD)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f411xe.h)(0x63742DCA)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\core_cm4.h)(0x626F2EBE)
+I (C:\Keil_v5\ARM\ARMCLANG\include\stdint.h)(0x63884908)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_version.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_compiler.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\cmsis_armclang.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\ARM\CMSIS\5.9.0\CMSIS\Core\Include\mpu_armv7.h)(0x626F2EBE)
+I (C:\Users\ney\AppData\Local\Arm\Packs\Keil\STM32F4xx_DFP\2.17.1\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h)(0x63742DCA)
