@@ -11,7 +11,7 @@
 -QP event driven framework running on uC/OS-ii port
 -QM modelling tool.
 
-##State machines
+## State machines
 ### Central active object
 ![plot](./Images/Object_Central.jpg) 
 ![plot](./Images/StateMachine_Central.jpg)
