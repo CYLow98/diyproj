@@ -5,6 +5,8 @@
 - Peripherals: Push button, WAVGAT OLED 0.96 inch I2C YB SDD1306, PiicoDev Colour Sensor VEML6040
 - Electrical components: Breadboard + power supply, Hook up wires, resistors (4.7k(2), 10k)
 
+![plot](./Images/ColourDiffusalSystem.jpg)
+
 ## Software and framework used
 -QP event driven framework running on uC/OS-ii port
 -QM modelling tool.
@@ -24,10 +26,6 @@
  1)Ultimate hook to group events common to both modes such as events to toggle led, get sensor readings and pause 
  2)Reminder to trigger updating of screen caused by entry to modes or by time events
  3)Orthogonal Component to realise the pausing mechanism, this is done by having the Central active object to hold a state machine called TickerKeeper as a component
-
- 
-
-![plot](./Images/ColourDiffusalSystem.jpg)
 
 Youtube video demo
 
