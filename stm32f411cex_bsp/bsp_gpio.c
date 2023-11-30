@@ -86,6 +86,24 @@ void bsp_gpio_PA7_reset(void){
 }
 /********************************************************************/
 
+/****************************GPIO Generic(PB10)***************************/
+void bsp_gpio_PB10_init(void){
+	SET_BIT(RCC->AHB1ENR,RCC_AHB1ENR_GPIOAEN);
+	MODIFY_REG(GPIOB->MODER,GPIO_MODER_MODE10_Msk,GPIO_MODER_OUTPUT<<GPIO_MODER_MODE10_Pos);
+	MODIFY_REG(GPIOB->OTYPER,GPIO_OTYPER_OT10_Msk,GPIO_OTYPER_PP<<GPIO_OTYPER_OT10_Pos);
+	MODIFY_REG(GPIOB->OSPEEDR,GPIO_OSPEEDR_OSPEED10_Msk,GPIO_OSPEEDR_MS<<GPIO_OSPEEDR_OSPEED10_Pos);
+	MODIFY_REG(GPIOB->PUPDR,GPIO_PUPDR_PUPD10_Msk,GPIO_PUPDR_PD<<GPIO_PUPDR_PUPD10_Pos);
+}
+
+void bsp_gpio_PB10_set(void){
+	SET_BIT(GPIOB->BSRR,GPIO_BSRR_BS10);
+}
+
+void bsp_gpio_PB10_reset(void){
+	SET_BIT(GPIOB->BSRR,GPIO_BSRR_BR10);
+}
+/********************************************************************/
+
 /****************************GPIO Generic(PA6)***************************/
 void bsp_gpio_PA6_init(void){
 	SET_BIT(RCC->AHB1ENR,RCC_AHB1ENR_GPIOAEN);
@@ -113,10 +131,12 @@ uint8_t bsp_gpio_PA6_get_state(void){
 /****************************GPIO Generic(PB0)***************************/
 void bsp_gpio_PB0_init(void){
 	SET_BIT(RCC->AHB1ENR,RCC_AHB1ENR_GPIOBEN);
-	MODIFY_REG(GPIOB->MODER,GPIO_MODER_MODE0_Msk,GPIO_MODER_OUTPUT<<GPIO_MODER_MODE0_Pos);
-	MODIFY_REG(GPIOB->OTYPER,GPIO_OTYPER_OT0_Msk,GPIO_OTYPER_PP<<GPIO_OTYPER_OT0_Pos);
-	MODIFY_REG(GPIOB->OSPEEDR,GPIO_OSPEEDR_OSPEED0_Msk,GPIO_OSPEEDR_MS<<GPIO_OSPEEDR_OSPEED0_Pos);
-	MODIFY_REG(GPIOB->PUPDR,GPIO_PUPDR_PUPD0_Msk,GPIO_PUPDR_PD<<GPIO_PUPDR_PUPD0_Pos);
+	//MODIFY_REG(GPIOB->MODER,GPIO_MODER_MODE0_Msk,GPIO_MODER_OUTPUT<<GPIO_MODER_MODE0_Pos);
+	//MODIFY_REG(GPIOB->OTYPER,GPIO_OTYPER_OT0_Msk,GPIO_OTYPER_PP<<GPIO_OTYPER_OT0_Pos);
+	//MODIFY_REG(GPIOB->OSPEEDR,GPIO_OSPEEDR_OSPEED0_Msk,GPIO_OSPEEDR_MS<<GPIO_OSPEEDR_OSPEED0_Pos);
+	//MODIFY_REG(GPIOB->PUPDR,GPIO_PUPDR_PUPD0_Msk,GPIO_PUPDR_PD<<GPIO_PUPDR_PUPD0_Pos);
+	MODIFY_REG(GPIOB->MODER,GPIO_MODER_MODE0_Msk,GPIO_MODER_INPUT<<GPIO_MODER_MODE0_Pos);
+	MODIFY_REG(GPIOB->PUPDR,GPIO_PUPDR_PUPD0_Msk,GPIO_PUPDR_PU<<GPIO_PUPDR_PUPD0_Pos);
 }
 
 void bsp_gpio_PB0_set(void){
@@ -125,5 +145,33 @@ void bsp_gpio_PB0_set(void){
 
 void bsp_gpio_PB0_reset(void){
 	SET_BIT(GPIOB->BSRR,GPIO_BSRR_BR0);
+}
+
+uint8_t bsp_gpio_PB0_get_state(void){
+	return (READ_BIT(GPIOB->IDR,GPIO_IDR_ID0_Msk)>>GPIO_IDR_ID0_Pos);
+}
+/********************************************************************/
+
+/****************************GPIO Generic(PB1)***************************/
+void bsp_gpio_PB1_init(void){
+	SET_BIT(RCC->AHB1ENR,RCC_AHB1ENR_GPIOBEN);
+	//MODIFY_REG(GPIOB->MODER,GPIO_MODER_MODE0_Msk,GPIO_MODER_OUTPUT<<GPIO_MODER_MODE0_Pos);
+	//MODIFY_REG(GPIOB->OTYPER,GPIO_OTYPER_OT0_Msk,GPIO_OTYPER_PP<<GPIO_OTYPER_OT0_Pos);
+	//MODIFY_REG(GPIOB->OSPEEDR,GPIO_OSPEEDR_OSPEED0_Msk,GPIO_OSPEEDR_MS<<GPIO_OSPEEDR_OSPEED0_Pos);
+	//MODIFY_REG(GPIOB->PUPDR,GPIO_PUPDR_PUPD0_Msk,GPIO_PUPDR_PD<<GPIO_PUPDR_PUPD0_Pos);
+	MODIFY_REG(GPIOB->MODER,GPIO_MODER_MODE1_Msk,GPIO_MODER_INPUT<<GPIO_MODER_MODE1_Pos);
+	MODIFY_REG(GPIOB->PUPDR,GPIO_PUPDR_PUPD1_Msk,GPIO_PUPDR_PU<<GPIO_PUPDR_PUPD1_Pos);
+}
+
+void bsp_gpio_PB1_set(void){
+	SET_BIT(GPIOB->BSRR,GPIO_BSRR_BS1);
+}
+
+void bsp_gpio_PB1_reset(void){
+	SET_BIT(GPIOB->BSRR,GPIO_BSRR_BR1);
+}
+
+uint8_t bsp_gpio_PB1_get_state(void){
+	return (READ_BIT(GPIOB->IDR,GPIO_IDR_ID1_Msk)>>GPIO_IDR_ID1_Pos);
 }
 /********************************************************************/

@@ -91,6 +91,8 @@ void bsp_i2c_master_transfer(const uint8_t* buf,uint16_t len,uint8_t addr){
 	//Wait I2C_SR1_SB = 1 (EV5 starts, clock is stretched by master)
 	while(READ_BIT(I2C1->SR1,I2C_SR1_SB)==0u);
 	
+	while(READ_BIT(I2C1->SR2,I2C_SR2_BUSY)==0u); //glitch?
+	
 	//Write addr to I2C_DR (set LSB to 0/reset)
 	I2C1->DR = (addr<<1);
 	

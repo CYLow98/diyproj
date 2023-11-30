@@ -6,7 +6,7 @@
 #include "stm32f411xe.h"                  // Device header
 #include "bsp_gpio.h"
 #include <stdbool.h>
-#include <stdio.h>
+//#include <stdio.h>
 /*******************************************************************************/
 
 typedef struct{
