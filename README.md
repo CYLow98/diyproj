@@ -23,6 +23,7 @@
 
 
 - Concept used:
+
  1)Ultimate hook to group events common to both modes such as events to toggle led, get sensor readings and pause 
  
  2)Reminder to trigger updating of screen caused by entry to modes or by time events
